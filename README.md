@@ -35,9 +35,7 @@
 
 **VeloraScout** is a full-stack, Google-style shopping and deal meta-search engine that indexes, normalizes, and compares real-time prices, **Black Friday / Cyber Week discounts**, and verified promo codes across global **Clothes, Fashion, Cosmetics, Makeup, Skincare, and Fragrance** retailers (*Sephora, Cult Beauty, ASOS, Nordstrom, Ulta Beauty, Selfridges, Zalando, and Farfetch*).
 
-Built with a **dual-purpose architecture**:
-1. **Full-Stack System Design & Engineering Showcase:** Next.js 15 App Router, natural-language query intent extraction, multi-retailer price comparison engine, CPA click attribution telemetry, and hybrid serverless/edge deployment.
-2. **Commercial Affiliate Production-Ready:** Pluggable `IFeedAdapter` ingestion pipeline (`Awin`, `Rakuten Advertising`, `CJ Affiliate`, `Impact`, `Partnerize`), outbound affiliate redirect tracking (`/api/redirect/[offerId]`), and complete FTC 16 CFR Part 255 / EU Directive / GDPR legal compliance pages.
+It combines a **Natural Language Search Intent Parser**, a **Multi-Retailer Price & Coupon Comparison Engine**, a **Pluggable `IFeedAdapter` Datafeed Pipeline** (`Awin`, `Rakuten Advertising`, `CJ Affiliate`, `Impact`, `Partnerize`), and a **Real-Time Attribution & Analytics Console** (`/admin`).
 
 ### Live Deployment Links
 * **Primary Full-Stack Application (Vercel):** [https://velora-scout.vercel.app](https://velora-scout.vercel.app)
@@ -172,9 +170,3 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) to test the meta-search interface, or [http://localhost:3000/admin](http://localhost:3000/admin) to inspect the publisher analytics console.
 
----
-
-## Commercial Affiliate Activation
-
-1. **Apply to Affiliate Networks:** Submit your live Vercel domain ([https://velora-scout.vercel.app](https://velora-scout.vercel.app)) to **Awin**, **Rakuten Advertising**, **CJ Affiliate**, **Impact**, and **Partnerize**.
-2. **Configure Production Environment Variables:** In your Vercel project settings, configure `DATABASE_URL`, `AFFILIATE_FEED_URL`, and `AFFILIATE_API_KEY` to switch from `DemoFeedAdapter` to live network product feeds via `AffiliateCsvFeedAdapter`.
