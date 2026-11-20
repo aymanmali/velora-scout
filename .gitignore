@@ -12,6 +12,7 @@
 
 # production
 /build
+/.vercel
 
 # local runtime data
 /.data/
@@ -32,3 +33,4 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+.vercel
