@@ -9,7 +9,7 @@ export function CookieBanner() {
 
   useEffect(() => {
     try {
-      const consent = localStorage.getItem("auradeals_cookie_consent");
+      const consent = localStorage.getItem("velorascout_cookie_consent");
       if (!consent) {
         setVisible(true);
       }
@@ -20,7 +20,7 @@ export function CookieBanner() {
 
   const handleAccept = (mode: "all" | "essential") => {
     try {
-      localStorage.setItem("auradeals_cookie_consent", mode);
+      localStorage.setItem("velorascout_cookie_consent", mode);
     } catch {
       // Ignore storage access errors
     }

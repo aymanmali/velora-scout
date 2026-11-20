@@ -14,7 +14,7 @@ export function Footer() {
                 <Sparkles className="h-4 w-4" />
               </div>
               <span className="text-lg font-extrabold text-slate-900">
-                Aura<span className="text-rose-600">Deals</span>
+                Velora<span className="text-rose-600">Scout</span>
               </span>
             </div>
             <p className="mt-3 text-xs leading-relaxed text-slate-500">
@@ -105,12 +105,12 @@ export function Footer() {
             Mandatory Commercial & Intellectual Property Notice:
           </p>
           <p className="mt-1">
-            AuraDeals operates as an independent meta-search and price comparison platform. We do not sell, ship, or warehouse products directly. All brand names, trademarks, product titles, and imagery belong to their respective owners and are displayed under publisher promotional licenses via authorized affiliate data feeds. Prices, promo codes, and Black Friday stock availability are subject to change on the merchant&apos;s checkout page.
+            VeloraScout operates as an independent meta-search and price comparison platform. We do not sell, ship, or warehouse products directly. All brand names, trademarks, product titles, and imagery belong to their respective owners and are displayed under publisher promotional licenses via authorized affiliate data feeds. Prices, promo codes, and Black Friday stock availability are subject to change on the merchant&apos;s checkout page.
           </p>
         </div>
 
         <div className="mt-6 flex flex-col items-center justify-between gap-2 border-t border-slate-100 pt-6 text-xs text-slate-400 sm:flex-row">
-          <p>© {new Date().getFullYear()} AuraDeals Meta-Search Engine. Portfolio & Commercial Architecture.</p>
+          <p>© {new Date().getFullYear()} VeloraScout Meta-Search Engine. Portfolio & Commercial Architecture.</p>
           <p>Built with Next.js App Router, TypeScript, Tailwind CSS & Prisma Schema.</p>
         </div>
       </div>

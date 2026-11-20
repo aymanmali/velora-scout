@@ -23,7 +23,7 @@ export async function GET(
 
   // Build commercial affiliate tracking URL
   const separator = offer.affiliateUrl.includes("?") ? "&" : "?";
-  const trackedOutboundUrl = `${offer.affiliateUrl}${separator}utm_source=auradeals&utm_medium=meta_search&aff_network=${offer.affiliateNetwork.toLowerCase()}&click_id=${clickEvent?.id || "anon"}`;
+  const trackedOutboundUrl = `${offer.affiliateUrl}${separator}utm_source=velorascout&utm_medium=meta_search&aff_network=${offer.affiliateNetwork.toLowerCase()}&click_id=${clickEvent?.id || "anon"}`;
 
   if (mode === "redirect") {
     return NextResponse.redirect(trackedOutboundUrl, 302);
@@ -41,6 +41,6 @@ export async function GET(
     },
     trackedOutboundUrl,
     legalDisclosure:
-      "AuraDeals earns an affiliate commission when you complete a purchase via this merchant link, at no additional cost to you.",
+      "VeloraScout earns an affiliate commission when you complete a purchase via this merchant link, at no additional cost to you.",
   });
 }

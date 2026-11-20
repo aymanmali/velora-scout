@@ -20,7 +20,7 @@ export function CurrencyProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     try {
-      const saved = localStorage.getItem("auradeals_currency") as CurrencyCode | null;
+      const saved = localStorage.getItem("velorascout_currency") as CurrencyCode | null;
       if (saved && CURRENCIES[saved]) {
         setCurrencyState(saved);
       }
@@ -32,7 +32,7 @@ export function CurrencyProvider({ children }: { children: React.ReactNode }) {
   const setCurrency = (c: CurrencyCode) => {
     setCurrencyState(c);
     try {
-      localStorage.setItem("auradeals_currency", c);
+      localStorage.setItem("velorascout_currency", c);
     } catch {
       // Ignore storage access errors
     }

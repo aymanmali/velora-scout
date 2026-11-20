@@ -418,7 +418,7 @@ export default function AdminDashboardPage() {
 
           <pre className="mt-4 overflow-x-auto rounded-xl border border-slate-800 bg-slate-950 p-3.5 font-mono text-[11px] text-emerald-400">
 {`# .env.production (Vercel / Cloudflare)
-DATABASE_URL="postgresql://user:pass@ep-aura.neon.tech/auradeals"
+DATABASE_URL="postgresql://user:pass@ep-velora.neon.tech/velorascout"
 AFFILIATE_FEED_URL="https://productdata.awin.com/datafeed/download/..."
 AFFILIATE_API_KEY="your_live_publisher_token"`}
           </pre>

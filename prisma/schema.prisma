@@ -1,5 +1,5 @@
 // ============================================================================
-// AuraDeals — Production Relational Database Schema (Prisma ORM)
+// VeloraScout — Production Relational Database Schema (Prisma ORM)
 // Supports PostgreSQL (Supabase / Neon / AWS RDS) & SQLite
 // ============================================================================
 
@@ -119,7 +119,7 @@ model ClickEvent {
   commissionRate         Float
   estimatedCommissionUsd Float
   promoCodeApplied       String?
-  referrer               String        @default("auradeals-search")
+  referrer               String        @default("velorascout-search")
   userAgentHash          String        @default("anon-session")
   timestamp              DateTime      @default(now())
 

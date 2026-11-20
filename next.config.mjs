@@ -5,8 +5,8 @@ const nextConfig = {
   ...(isGithubPages
     ? {
         output: "export",
-        basePath: "/aura-deals",
-        assetPrefix: "/aura-deals/",
+        basePath: "/velora-scout",
+        assetPrefix: "/velora-scout/",
       }
     : {}),
   images: {

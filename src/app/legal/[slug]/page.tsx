@@ -14,17 +14,17 @@ const LEGAL_PAGES: Record<string, LegalContent> = {
   "affiliate-disclosure": {
     title: "FTC & EU Commercial Affiliate Disclosure",
     subtitle:
-      "Transparency regarding how AuraDeals monetizes brand referrals and maintains editorial and search ranking independence.",
+      "Transparency regarding how VeloraScout monetizes brand referrals and maintains editorial and search ranking independence.",
     lastUpdated: "November 2026",
     badge: "FTC 16 CFR Part 255 & EU Directive 2005/29/EC Compliant",
     sections: [
       {
         heading: "1. Commercial Affiliate Relationship Disclosure",
-        body: "AuraDeals operates as a meta-search and price comparison platform for Fashion, Clothes, Cosmetics, Makeup, Skincare, and Beauty products. In compliance with the US Federal Trade Commission (FTC) guidelines (16 CFR Part 255), the UK ASA CAP Code, and the European Union Unfair Commercial Practices Directive, please be advised that AuraDeals participates in commercial affiliate marketing programs.",
+        body: "VeloraScout operates as a meta-search and price comparison platform for Fashion, Clothes, Cosmetics, Makeup, Skincare, and Beauty products. In compliance with the US Federal Trade Commission (FTC) guidelines (16 CFR Part 255), the UK ASA CAP Code, and the European Union Unfair Commercial Practices Directive, please be advised that VeloraScout participates in commercial affiliate marketing programs.",
       },
       {
         heading: "2. How Affiliate Links & Commissions Work",
-        body: "When you search for a product on AuraDeals and click on a 'View Best Deal', 'Get Deal', or retailer comparison link (routed via /api/redirect), you are redirected to the official website of the third-party brand or authorized retailer (such as Sephora, Cult Beauty, ASOS, Nordstrom, Ulta Beauty, Selfridges, Zalando, or Farfetch). If you complete a qualifying purchase on the merchant's site, AuraDeals may earn a referral commission (typically 5% to 12% CPA) from the merchant or their affiliate network (Awin, Rakuten Advertising, CJ Affiliate, Impact, or Partnerize) at zero additional cost to you.",
+        body: "When you search for a product on VeloraScout and click on a 'View Best Deal', 'Get Deal', or retailer comparison link (routed via /api/redirect), you are redirected to the official website of the third-party brand or authorized retailer (such as Sephora, Cult Beauty, ASOS, Nordstrom, Ulta Beauty, Selfridges, Zalando, or Farfetch). If you complete a qualifying purchase on the merchant's site, VeloraScout may earn a referral commission (typically 5% to 12% CPA) from the merchant or their affiliate network (Awin, Rakuten Advertising, CJ Affiliate, Impact, or Partnerize) at zero additional cost to you.",
       },
       {
         heading: "3. Algorithmic Search & Price Comparison Independence",
@@ -32,28 +32,28 @@ const LEGAL_PAGES: Record<string, LegalContent> = {
       },
       {
         heading: "4. Intellectual Property & Authorized Product Data Feeds",
-        body: "All brand logos, product titles, and product photographs displayed on AuraDeals are the property of their respective trademark and copyright holders. Product metadata is ingested via official publisher product data feeds solely to identify and promote the merchants' genuine products.",
+        body: "All brand logos, product titles, and product photographs displayed on VeloraScout are the property of their respective trademark and copyright holders. Product metadata is ingested via official publisher product data feeds solely to identify and promote the merchants' genuine products.",
       },
     ],
   },
   terms: {
     title: "Terms of Service & Price Accuracy Disclaimer",
     subtitle:
-      "Legal terms governing your use of the AuraDeals meta-search engine and third-party retailer redirects.",
+      "Legal terms governing your use of the VeloraScout meta-search engine and third-party retailer redirects.",
     lastUpdated: "November 2026",
     badge: "Meta-Search Intermediary Terms",
     sections: [
       {
         heading: "1. Role as a Meta-Search Intermediary (Not a Direct Seller)",
-        body: "AuraDeals is an information discovery and price comparison service. We do not carry inventory, process customer payments, ship merchandise, or handle product returns. All sales contracts are formed exclusively between you (the shopper) and the destination retailer on their checkout page.",
+        body: "VeloraScout is an information discovery and price comparison service. We do not carry inventory, process customer payments, ship merchandise, or handle product returns. All sales contracts are formed exclusively between you (the shopper) and the destination retailer on their checkout page.",
       },
       {
         heading: "2. Real-Time Price, Black Friday Discount & Stock Disclaimer",
-        body: "While our feed ingestion engine syncs product feeds frequently to reflect accurate Black Friday discounts, flash sales, and promo codes, retailers may update prices or exhaust stock at any moment. If a discrepancy exists between the price displayed on AuraDeals and the price shown on the merchant's checkout page, the price on the merchant's checkout page always governs.",
+        body: "While our feed ingestion engine syncs product feeds frequently to reflect accurate Black Friday discounts, flash sales, and promo codes, retailers may update prices or exhaust stock at any moment. If a discrepancy exists between the price displayed on VeloraScout and the price shown on the merchant's checkout page, the price on the merchant's checkout page always governs.",
       },
       {
         heading: "3. Promo Codes & Coupon Eligibility",
-        body: "Promo codes displayed on AuraDeals are provided by affiliate networks and merchant feeds. Certain exclusions (such as minimum spend thresholds, regional shipping restrictions, or one-per-customer limits) may apply on the retailer's site.",
+        body: "Promo codes displayed on VeloraScout are provided by affiliate networks and merchant feeds. Certain exclusions (such as minimum spend thresholds, regional shipping restrictions, or one-per-customer limits) may apply on the retailer's site.",
       },
       {
         heading: "4. Customer Support, Returns & Warranties",
@@ -64,13 +64,13 @@ const LEGAL_PAGES: Record<string, LegalContent> = {
   privacy: {
     title: "Privacy Policy & Affiliate Cookie Notice (GDPR / CCPA)",
     subtitle:
-      "How AuraDeals handles search queries, local currency preferences, and third-party affiliate attribution cookies.",
+      "How VeloraScout handles search queries, local currency preferences, and third-party affiliate attribution cookies.",
     lastUpdated: "November 2026",
     badge: "GDPR & CCPA Privacy Architecture",
     sections: [
       {
         heading: "1. Minimal Data Collection Principle",
-        body: "AuraDeals allows you to search and compare Fashion, Cosmetics, and Beauty offers without creating an account or submitting personal identification details (such as your name, home address, or credit card number).",
+        body: "VeloraScout allows you to search and compare Fashion, Cosmetics, and Beauty offers without creating an account or submitting personal identification details (such as your name, home address, or credit card number).",
       },
       {
         heading: "2. Local Storage & Essential Preferences",
@@ -78,7 +78,7 @@ const LEGAL_PAGES: Record<string, LegalContent> = {
       },
       {
         heading: "3. Outbound Affiliate Click Attribution & Tracking Cookies",
-        body: "When you click an outbound deal link (/api/redirect/[offerId]), our server records an anonymized click telemetry event (timestamp, offer ID, currency, and estimated commission) and appends standard affiliate parameters (such as click_id and network attribution tokens) to the destination URL. The destination merchant or affiliate network (e.g., Awin, Rakuten, CJ) places an attribution cookie on your browser (typically valid for 7 to 30 days) solely to recognize that AuraDeals referred your visit.",
+        body: "When you click an outbound deal link (/api/redirect/[offerId]), our server records an anonymized click telemetry event (timestamp, offer ID, currency, and estimated commission) and appends standard affiliate parameters (such as click_id and network attribution tokens) to the destination URL. The destination merchant or affiliate network (e.g., Awin, Rakuten, CJ) places an attribution cookie on your browser (typically valid for 7 to 30 days) solely to recognize that VeloraScout referred your visit.",
       },
       {
         heading: "4. Your GDPR & CCPA Rights",

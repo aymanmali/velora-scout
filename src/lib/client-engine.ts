@@ -14,8 +14,8 @@ import type {
   SearchQueryOptions,
 } from "./db";
 
-const CLICKS_STORAGE_KEY = "auradeals_live_clicks_v1";
-const SYNCS_STORAGE_KEY = "auradeals_live_syncs_v1";
+const CLICKS_STORAGE_KEY = "velorascout_live_clicks_v1";
+const SYNCS_STORAGE_KEY = "velorascout_live_syncs_v1";
 
 export function enrichProductClient(product: ProductRecord): EnrichedProduct {
   const sortedOffers = [...product.offers].sort(
@@ -392,7 +392,7 @@ export function recordClickClient(offerId: string, currency: string = "USD") {
   }
 
   const separator = foundOffer.affiliateUrl.includes("?") ? "&" : "?";
-  const trackedOutboundUrl = `${foundOffer.affiliateUrl}${separator}utm_source=auradeals&utm_medium=meta_search&aff_network=${foundOffer.affiliateNetwork.toLowerCase()}&click_id=${clickEvent.id}`;
+  const trackedOutboundUrl = `${foundOffer.affiliateUrl}${separator}utm_source=velorascout&utm_medium=meta_search&aff_network=${foundOffer.affiliateNetwork.toLowerCase()}&click_id=${clickEvent.id}`;
 
   return {
     status: "CLICK_ATTRIBUTED",
@@ -406,7 +406,7 @@ export function recordClickClient(offerId: string, currency: string = "USD") {
     },
     trackedOutboundUrl,
     legalDisclosure:
-      "AuraDeals earns an affiliate commission when you complete a purchase via this merchant link, at no additional cost to you.",
+      "VeloraScout earns an affiliate commission when you complete a purchase via this merchant link, at no additional cost to you.",
   };
 }
 

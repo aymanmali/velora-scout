@@ -1,4 +1,4 @@
-name: AuraDeals CI — Typecheck & Production Build
+name: VeloraScout CI — Typecheck & Production Build
 
 on:
   push:

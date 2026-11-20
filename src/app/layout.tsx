@@ -6,7 +6,7 @@ import { Footer } from "@/components/Footer";
 import { CookieBanner } from "@/components/CookieBanner";
 
 export const metadata: Metadata = {
-  title: "AuraDeals — Fashion, Cosmetics & Beauty Deal Meta-Search Engine",
+  title: "VeloraScout — Fashion, Cosmetics & Beauty Deal Meta-Search Engine",
   description:
     "Google-like shopping meta-search engine aggregating Black Friday offers, multi-brand price comparisons, and promo codes across Clothes, Makeup, Skincare & Fragrance.",
 };
