@@ -1,21 +1,49 @@
-# VeloraScout — Multi-Brand Fashion, Cosmetics & Beauty Deal Meta-Search Engine
+<div align="center">
 
-[![Live Demo (Vercel)](https://img.shields.io/badge/Live_Demo-velora--scout.vercel.app-000000?style=flat-square&logo=vercel)](https://velora-scout.vercel.app)
-[![GitHub Pages Mirror](https://img.shields.io/badge/Mirror-aymanmali.github.io%2Fvelora--scout-e11d48?style=flat-square&logo=github)](https://aymanmali.github.io/velora-scout/)
-[![CI Build & Typecheck](https://img.shields.io/badge/CI-Passing-10b981?style=flat-square&logo=githubactions)](./.github/workflows/ci.yml)
-[![Next.js 15](https://img.shields.io/badge/Next.js-15%20App%20Router-000000?style=flat-square&logo=next.js)](https://nextjs.org/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.7%20Strict-3178c6?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-38bdf8?style=flat-square&logo=tailwindcss)](https://tailwindcss.com/)
-[![Prisma Schema](https://img.shields.io/badge/ORM-Prisma%20Schema-2d3748?style=flat-square&logo=prisma)](./prisma/schema.prisma)
+# VeloraScout
+### Multi-Brand Fashion, Cosmetics & Beauty Deal Meta-Search Engine
 
-> **Live Full-Stack Website (Vercel):** **[https://velora-scout.vercel.app](https://velora-scout.vercel.app)**  
-> **GitHub Pages Mirror:** **[https://aymanmali.github.io/velora-scout/](https://aymanmali.github.io/velora-scout/)**
+<p align="center">
+  <a href="https://velora-scout.vercel.app">
+    <img src="https://img.shields.io/badge/Live_Demo_↗-velora--scout.vercel.app-10B981?style=flat-square&logo=vercel&logoColor=white" alt="Live Demo on Vercel" />
+  </a>
+  &nbsp;
+  <a href="https://velora-scout.vercel.app/admin">
+    <img src="https://img.shields.io/badge/Admin_Console_↗-Publisher_&_Feed_Analytics-E11D48?style=flat-square&logo=vercel&logoColor=white" alt="Live Admin Console" />
+  </a>
+  &nbsp;
+  <a href="https://github.com/aymanmali/velora-scout/actions">
+    <img src="https://img.shields.io/badge/CI_&_Pages-Passing-10B981?style=flat-square&logo=githubactions&logoColor=white" alt="CI Status" />
+  </a>
+</p>
 
-**VeloraScout** is a full-stack, Google-style shopping & deal meta-search engine built to aggregate and compare real-time prices, **Black Friday / Cyber Week discounts**, and verified promo codes across global **Clothes, Fashion, Cosmetics, Makeup, Skincare, and Fragrance** retailers (*Sephora, Cult Beauty, ASOS, Nordstrom, Ulta Beauty, Selfridges, Zalando, and Farfetch*).
+<p align="center">
+  <img src="https://img.shields.io/badge/Next.js_15-App_Router-000000?style=flat-square&logo=next.js" alt="Next.js 15" />
+  &nbsp;
+  <img src="https://img.shields.io/badge/TypeScript-5.7_Strict-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript" />
+  &nbsp;
+  <img src="https://img.shields.io/badge/Tailwind_CSS-3.4-38BDF8?style=flat-square&logo=tailwindcss&logoColor=white" alt="Tailwind CSS" />
+  &nbsp;
+  <img src="https://img.shields.io/badge/Prisma_ORM-Relational_Schema-2D3748?style=flat-square&logo=prisma&logoColor=white" alt="Prisma" />
+</p>
 
-Designed with a **dual-purpose architecture**:
-1. **Engineering Portfolio & System Design Showcase**: Clean full-stack Next.js App Router architecture, natural-language query intent parsing, faceted search API, real-time click attribution telemetry, and zero-config serverless deployment.
-2. **Commercial Affiliate Production-Ready**: Implements a pluggable `IFeedAdapter` ingestion layer (`Awin`, `Rakuten Advertising`, `CJ Affiliate`, `Impact`, `Partnerize`), outbound affiliate attribution logging (`/api/redirect/[offerId]`), and full FTC / EU / GDPR legal compliance pages.
+</div>
+
+---
+
+## Overview
+
+**VeloraScout** is a full-stack, Google-style shopping and deal meta-search engine that indexes, normalizes, and compares real-time prices, **Black Friday / Cyber Week discounts**, and verified promo codes across global **Clothes, Fashion, Cosmetics, Makeup, Skincare, and Fragrance** retailers (*Sephora, Cult Beauty, ASOS, Nordstrom, Ulta Beauty, Selfridges, Zalando, and Farfetch*).
+
+Built with a **dual-purpose architecture**:
+1. **Full-Stack System Design & Engineering Showcase:** Next.js 15 App Router, natural-language query intent extraction, multi-retailer price comparison engine, CPA click attribution telemetry, and hybrid serverless/edge deployment.
+2. **Commercial Affiliate Production-Ready:** Pluggable `IFeedAdapter` ingestion pipeline (`Awin`, `Rakuten Advertising`, `CJ Affiliate`, `Impact`, `Partnerize`), outbound affiliate redirect tracking (`/api/redirect/[offerId]`), and complete FTC 16 CFR Part 255 / EU Directive / GDPR legal compliance pages.
+
+### Live Deployment Links
+* **Primary Full-Stack Application (Vercel):** [https://velora-scout.vercel.app](https://velora-scout.vercel.app)
+* **Merchant & Affiliate Analytics Console:** [https://velora-scout.vercel.app/admin](https://velora-scout.vercel.app/admin)
+* **FTC Affiliate Disclosure & Legal Suite:** [https://velora-scout.vercel.app/legal/affiliate-disclosure](https://velora-scout.vercel.app/legal/affiliate-disclosure)
+* **GitHub Pages Static Mirror:** [https://aymanmali.github.io/velora-scout/](https://aymanmali.github.io/velora-scout/)
 
 ---
 
@@ -23,16 +51,16 @@ Designed with a **dual-purpose architecture**:
 
 ```mermaid
 flowchart TD
-    subgraph Client["Frontend (Next.js App Router + Tailwind CSS)"]
-        SearchUI["Google-Like Omnibox & Smart Intent Parser"]
+    subgraph Client["Frontend (Next.js 15 App Router + Tailwind CSS)"]
+        SearchUI["Google-Like Omnibox & NLP Intent Parser"]
         Filters["Faceted Verticals, Brand, Retailer & Black Friday Filters"]
         CompareModal["Multi-Store Price & Promo Code Comparison Modal"]
-        Currency["Global Currency Engine ($ USD / € EUR / £ GBP)"]
+        Currency["Global Currency Switcher ($ USD / € EUR / £ GBP)"]
         AdminUI["Merchant Analytics & Feed Sync Console (/admin)"]
         LegalUI["FTC Affiliate Disclosure, Terms & GDPR Cookie Suite (/legal/*)"]
     end
 
-    subgraph Backend["Backend REST API Layer"]
+    subgraph Backend["Backend REST API Layer (Vercel Serverless)"]
         SearchAPI["GET /api/search — Full-Text, NLP Intent, Facets & Sorting"]
         RedirectAPI["GET /api/redirect/[offerId] — CPA Click Logger & 302 Attribution"]
         SyncAPI["POST /api/feeds/sync — Pluggable Feed Ingestion Pipeline"]
@@ -40,13 +68,13 @@ flowchart TD
     end
 
     subgraph Adapters["Pluggable Feed Adapter Engine (src/lib/adapters/)"]
-        Interface["IFeedAdapter Interface"]
-        DemoAdapter["DemoMultiNetworkFeedAdapter (Portfolio Mode)"]
-        CommercialAdapter["AffiliateCsvFeedAdapter (Awin / Rakuten / CJ Live Mode)"]
+        Interface["IFeedAdapter Contract"]
+        DemoAdapter["DemoMultiNetworkFeedAdapter (Portfolio Catalog)"]
+        CommercialAdapter["AffiliateCsvFeedAdapter (Awin / Rakuten / CJ Live Feeds)"]
     end
 
     subgraph Data["Persistence Layer"]
-        DB[("Normalized Catalog & Click Event Store + Prisma Schema")]
+        DB[("Normalized Multi-Merchant Store + Prisma PostgreSQL Schema")]
     end
 
     SearchUI & Filters --> SearchAPI
@@ -60,26 +88,37 @@ flowchart TD
 
 ---
 
-## Key Features
+## Core Engineering Highlights
 
 ### 1. Google-Style Meta-Search & Natural Language Intent Parser
-- **Instant Omnibox (`/` shortcut)**: Search across brands, product titles, categories, ingredients, or retailer names.
-- **Smart Query Intent Detection**: Typing natural language queries like `"waterproof mascara under $30"` or `"Black Friday skincare 40% off"` automatically extracts and applies structured filters (`Max Price: $30`, `40%+ Off`, `Black Friday Deal`).
-- **Multi-Vertical Facets**: Filter across **Clothes & Fashion**, **Makeup & Cosmetics**, **Skincare & K-Beauty**, **Luxury Fragrance**, and **Beauty Tech & Hair**.
+* **Instant Omnibox (`/` keyboard shortcut):** Full-text search across 18+ fashion & beauty brands, 25 canonical products, and 73+ competing retailer offers.
+* **Conversational Filter Extraction:** Queries such as `"waterproof mascara under $30"` or `"Black Friday skincare 40% off"` are parsed in real time by `parseSearchIntent()` to automatically apply structured constraints (`Max Price: $30`, `40%+ Off`, `Black Friday Deal`).
+* **Multi-Vertical Facets:** Instant filtering across **Clothes & Fashion**, **Makeup & Cosmetics**, **Skincare & K-Beauty**, **Luxury Fragrance**, and **Beauty Tech & Hair**.
 
-### 2. Multi-Brand Price Comparison & Promo Code Engine
-- Each canonical product aggregates offers from multiple competing retailers side-by-side.
-- Automatically computes the **Winning Offer (Lowest Price)**, **Maximum Discount %**, and **Dollar Savings**, with one-click promo code copying (`BFGLOW45`, `FENTY50BF`, `WINTER50`, etc.).
-- **Global Currency Switcher**: Instant client-side conversion between **`$ USD`**, **`€ EUR`**, and **`£ GBP`**.
+### 2. Multi-Retailer Price Comparison & Global Currency Engine
+* **Canonical Product Aggregation:** Groups competing offers for the same product across up to 4 retailers side-by-side, ranking the winning store by lowest checkout price and deepest discount percentage.
+* **One-Click Promo Code Copy:** Interactive coupon chips (`BFGLOW45`, `FENTY50BF`, `WINTER50`, `AVIATOR50`) with clipboard feedback.
+* **Multi-Currency Conversion:** Instant switching between **`$ USD`**, **`€ EUR`**, and **`£ GBP`**.
 
-### 3. Commercial Affiliate Attribution & Admin Console (`/admin`)
-- **Click-Out Attribution Gateway (`GET /api/redirect/[offerId]`)**: Records every outbound user click, calculates estimated publisher commission (`salePrice * commissionRate`), and appends affiliate network tracking parameters (`utm_source`, `aff_network`, `click_id`).
-- **Live Publisher Dashboard**: Tracks Outbound Clicks, Referred GMV, Estimated CPA Commission, Merchant Performance breakdown, and includes an interactive **"Run Feed Sync Pipeline"** trigger.
+### 3. Commercial Affiliate Attribution & Publisher Console (`/admin`)
+* **Click-Out Attribution Gateway (`GET /api/redirect/[offerId]`):** Logs each outbound click event, computes estimated CPA commission (`salePriceUsd * commissionRate`), and constructs tracked affiliate URLs (`utm_source=velorascout`, `aff_network`, `click_id`).
+* **Live Analytics Dashboard:** Real-time KPI cards (Outbound Affiliate Clicks, Referred GMV, Estimated Publisher Commission, Average Discount Depth), merchant performance table, live click stream, and an interactive **"Run Feed Sync Pipeline"** trigger.
 
-### 4. Legal & Regulatory Compliance (`/legal/*`)
-- **FTC 16 CFR Part 255 & EU Directive 2005/29/EC** Affiliate Disclosure (`/legal/affiliate-disclosure`).
-- **Meta-Search Terms & Price Accuracy Disclaimer** (`/legal/terms`).
-- **GDPR / CCPA Privacy Policy & Affiliate Cookie Consent Banner** (`/legal/privacy`).
+### 4. Regulatory & Legal Compliance (`/legal/*`)
+* **FTC 16 CFR Part 255 & EU Directive 2005/29/EC** Affiliate Disclosure (`/legal/affiliate-disclosure`).
+* **Meta-Search Intermediary Terms & Price Accuracy Disclaimer** (`/legal/terms`).
+* **GDPR / CCPA Privacy Policy & Affiliate Cookie Consent Manager** (`/legal/privacy`).
+
+---
+
+## REST API Reference
+
+| Method | Endpoint | Description |
+| :--- | :--- | :--- |
+| `GET` | `/api/search` | Full-text search, NLP intent parsing, faceted filtering (`q`, `category`, `brand`, `merchant`, `minDiscount`, `blackFriday`, `hasPromo`, `freeShipping`, `sort`). |
+| `GET` | `/api/redirect/[offerId]` | Logs commercial `ClickEvent`, computes CPA commission, and returns attribution receipt JSON (`mode=json`) or HTTP 302 redirect (`mode=redirect`). |
+| `GET` | `/api/analytics` | Aggregates publisher KPIs, merchant CPA performance, recent click stream, and feed sync history. |
+| `POST` | `/api/feeds/sync` | Executes the active `IFeedAdapter` ingestion pipeline and updates catalog offer timestamps. |
 
 ---
 
@@ -108,32 +147,34 @@ velora-scout/
 │   └── lib/
 │       ├── adapters/
 │       │   ├── types.ts                   # IFeedAdapter contract & domain types
-│       │   ├── demo-adapter.ts            # Portfolio multi-brand Black Friday catalog adapter
+│       │   ├── demo-adapter.ts            # Multi-brand Black Friday portfolio catalog adapter
 │       │   └── affiliate-csv-adapter.ts   # Commercial Awin / Rakuten / CJ feed adapter
-│       ├── seed-data.ts                   # 18 Brands, 8 Retailers, 15 Canonical Products, 42+ Offers
+│       ├── seed-data.ts                   # 18 Brands, 8 Retailers, 25 Canonical Products, 73+ Offers
 │       ├── currency.ts                    # USD / EUR / GBP conversion utility
-│       └── db.ts                          # Search engine, intent parser & attribution repository
-└── .github/workflows/ci.yml               # GitHub Actions CI (TypeScript + Next.js Production Build)
+│       ├── client-engine.ts               # Hybrid client fallback engine for static mirrors
+│       └── db.ts                          # Server search engine, intent parser & attribution store
+└── .github/workflows/
+    ├── ci.yml                             # GitHub Actions CI (TypeScript + Next.js Production Build)
+    └── deploy-pages.yml                   # Automated GitHub Pages mirror deployment
 ```
 
 ---
 
-## Quick Start (Local Development)
+## Local Development
 
 ```bash
 # 1. Install dependencies
 npm install
 
-# 2. Run the development server
+# 2. Start the Next.js development server
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) to explore the search engine, or visit [http://localhost:3000/admin](http://localhost:3000/admin) to inspect the merchant analytics and trigger a live feed sync.
+Open [http://localhost:3000](http://localhost:3000) to test the meta-search interface, or [http://localhost:3000/admin](http://localhost:3000/admin) to inspect the publisher analytics console.
 
 ---
 
-## Flipping the Switch to Commercial Production
+## Commercial Affiliate Activation
 
-1. **Deploy Live MVP**: Push this repository to GitHub and import into **Vercel** (zero configuration needed).
-2. **Apply to Affiliate Networks**: Submit your live domain to **Awin**, **Rakuten Advertising**, **CJ Affiliate**, **Impact**, and **Partnerize**.
-3. **Configure Production Credentials**: Set `DATABASE_URL`, `AFFILIATE_FEED_URL`, and `AFFILIATE_API_KEY` in your Vercel environment variables to activate `AffiliateCsvFeedAdapter`.
+1. **Apply to Affiliate Networks:** Submit your live Vercel domain ([https://velora-scout.vercel.app](https://velora-scout.vercel.app)) to **Awin**, **Rakuten Advertising**, **CJ Affiliate**, **Impact**, and **Partnerize**.
+2. **Configure Production Environment Variables:** In your Vercel project settings, configure `DATABASE_URL`, `AFFILIATE_FEED_URL`, and `AFFILIATE_API_KEY` to switch from `DemoFeedAdapter` to live network product feeds via `AffiliateCsvFeedAdapter`.
