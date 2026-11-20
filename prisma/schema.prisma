@@ -1,0 +1,140 @@
+// ============================================================================
+// AuraDeals — Production Relational Database Schema (Prisma ORM)
+// Supports PostgreSQL (Supabase / Neon / AWS RDS) & SQLite
+// ============================================================================
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql" // Switch to "sqlite" for local file-based Prisma SQLite
+  url      = env("DATABASE_URL")
+}
+
+enum ProductCategory {
+  CLOTHES
+  MAKEUP
+  SKINCARE
+  FRAGRANCE
+  ACCESSORIES
+}
+
+enum AffiliateNetwork {
+  AWIN
+  CJ_AFFILIATE
+  RAKUTEN
+  IMPACT
+  PARTNERIZE
+  AMAZON_ASSOCIATES
+  DIRECT_PARTNER
+}
+
+model Brand {
+  id          String          @id @default(cuid())
+  name        String          @unique
+  slug        String          @unique
+  logoUrl     String?
+  category    ProductCategory
+  verified    Boolean         @default(true)
+  country     String          @default("Global")
+  products    Product[]
+  createdAt   DateTime        @default(now())
+  updatedAt   DateTime        @updatedAt
+}
+
+model Merchant {
+  id               String           @id @default(cuid())
+  name             String           @unique
+  slug             String           @unique
+  domain           String
+  logoUrl          String?
+  affiliateNetwork AffiliateNetwork
+  commissionRate   Float            @default(0.08) // e.g., 0.08 = 8% CPA commission
+  trustScore       Float            @default(4.8)
+  activeFeed       Boolean          @default(true)
+  offers           MerchantOffer[]
+  clickEvents      ClickEvent[]
+  createdAt        DateTime         @default(now())
+  updatedAt        DateTime         @updatedAt
+}
+
+model Product {
+  id          String          @id @default(cuid())
+  title       String
+  slug        String          @unique
+  category    ProductCategory
+  subcategory String
+  brandId     String
+  brand       Brand           @relation(fields: [brandId], references: [id], onDelete: Cascade)
+  description String
+  imageUrl    String
+  rating      Float           @default(4.7)
+  reviewCount Int             @default(120)
+  tags        String[]        // Searchable keywords (e.g., ["vegan", "waterproof", "black-friday"])
+  trending    Boolean         @default(false)
+  offers      MerchantOffer[]
+  createdAt   DateTime        @default(now())
+  updatedAt   DateTime        @updatedAt
+
+  @@index([category])
+  @@index([brandId])
+}
+
+model MerchantOffer {
+  id               String       @id @default(cuid())
+  productId        String
+  product          Product      @relation(fields: [productId], references: [id], onDelete: Cascade)
+  merchantId       String
+  merchant         Merchant     @relation(fields: [merchantId], references: [id], onDelete: Cascade)
+  originalPriceUsd Float
+  salePriceUsd     Float
+  discountPercent  Int
+  isBlackFriday    Boolean      @default(false)
+  promoCode        String?
+  promoDescription String?
+  freeShipping     Boolean      @default(true)
+  shippingInfo     String       @default("Free Express Shipping")
+  inStock          Boolean      @default(true)
+  affiliateUrl     String
+  clickEvents      ClickEvent[]
+  lastUpdated      DateTime     @default(now())
+
+  @@unique([productId, merchantId])
+  @@index([discountPercent])
+  @@index([salePriceUsd])
+  @@index([isBlackFriday])
+}
+
+model ClickEvent {
+  id                     String        @id @default(cuid())
+  offerId                String
+  offer                  MerchantOffer @relation(fields: [offerId], references: [id], onDelete: Cascade)
+  merchantId             String
+  merchant               Merchant      @relation(fields: [merchantId], references: [id], onDelete: Cascade)
+  productTitle           String
+  brandName              String
+  salePriceUsd           Float
+  currency               String        @default("USD")
+  commissionRate         Float
+  estimatedCommissionUsd Float
+  promoCodeApplied       String?
+  referrer               String        @default("auradeals-search")
+  userAgentHash          String        @default("anon-session")
+  timestamp              DateTime      @default(now())
+
+  @@index([merchantId])
+  @@index([timestamp])
+}
+
+model FeedSyncLog {
+  id               String   @id @default(cuid())
+  adapterName      String
+  network          String
+  status           String   // "SUCCESS" | "PARTIAL" | "FAILED"
+  productsSynced   Int
+  offersUpdated    Int
+  blackFridayDeals Int
+  durationMs       Int
+  timestamp        DateTime @default(now())
+}
