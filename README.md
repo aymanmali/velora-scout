@@ -1,10 +1,13 @@
 # AuraDeals — Multi-Brand Fashion, Cosmetics & Beauty Deal Meta-Search Engine
 
+[![Live Demo](https://img.shields.io/badge/Live_Demo-aymanmali.github.io%2Faura--deals-e11d48?style=flat-square&logo=github)](https://aymanmali.github.io/aura-deals/)
 [![CI Build & Typecheck](https://img.shields.io/badge/CI-Passing-10b981?style=flat-square&logo=githubactions)](./.github/workflows/ci.yml)
 [![Next.js 15](https://img.shields.io/badge/Next.js-15%20App%20Router-000000?style=flat-square&logo=next.js)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.7%20Strict-3178c6?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-38bdf8?style=flat-square&logo=tailwindcss)](https://tailwindcss.com/)
 [![Prisma Schema](https://img.shields.io/badge/ORM-Prisma%20Schema-2d3748?style=flat-square&logo=prisma)](./prisma/schema.prisma)
+
+> **Live Demo Website:** **[https://aymanmali.github.io/aura-deals/](https://aymanmali.github.io/aura-deals/)**
 
 **AuraDeals** is a full-stack, Google-style shopping & deal meta-search engine built to aggregate and compare real-time prices, **Black Friday / Cyber Week discounts**, and verified promo codes across global **Clothes, Fashion, Cosmetics, Makeup, Skincare, and Fragrance** retailers (*Sephora, Cult Beauty, ASOS, Nordstrom, Ulta Beauty, Selfridges, Zalando, and Farfetch*).
 

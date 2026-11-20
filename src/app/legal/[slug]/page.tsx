@@ -88,6 +88,14 @@ const LEGAL_PAGES: Record<string, LegalContent> = {
   },
 };
 
+export function generateStaticParams() {
+  return [
+    { slug: "affiliate-disclosure" },
+    { slug: "terms" },
+    { slug: "privacy" },
+  ];
+}
+
 export default async function LegalPage({
   params,
 }: {

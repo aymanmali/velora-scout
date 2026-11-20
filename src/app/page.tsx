@@ -23,7 +23,12 @@ import {
 import {
   EnrichedProduct,
   ParsedSearchIntent,
+  SearchQueryOptions,
 } from "@/lib/db";
+import {
+  searchCatalogClient,
+  recordClickClient,
+} from "@/lib/client-engine";
 import {
   BrandRecord,
   MerchantRecord,
@@ -138,7 +143,22 @@ export default function HomePage() {
       if (res.ok) {
         const json = (await res.json()) as SearchApiResponse;
         setData(json);
+        return;
       }
+      throw new Error("Fallback to client engine");
+    } catch {
+      const fallback = searchCatalogClient({
+        q: debouncedQuery,
+        category,
+        brand,
+        merchant,
+        minDiscount,
+        onlyBlackFriday,
+        onlyPromoCode,
+        onlyFreeShipping,
+        sort: sort as SearchQueryOptions["sort"],
+      });
+      setData(fallback);
     } finally {
       setLoading(false);
     }
@@ -192,6 +212,13 @@ export default function HomePage() {
       if (res.ok) {
         const receipt = (await res.json()) as RedirectReceipt;
         setRedirectReceipt(receipt);
+        return;
+      }
+      throw new Error("Fallback to client attribution");
+    } catch {
+      const fallbackReceipt = recordClickClient(offer.id, currency);
+      if (fallbackReceipt) {
+        setRedirectReceipt(fallbackReceipt);
       }
     } finally {
       setRedirectLoading(false);

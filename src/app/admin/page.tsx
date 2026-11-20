@@ -20,6 +20,10 @@ import {
 import { useCurrency } from "@/components/CurrencyContext";
 import { ClickEventRecord } from "@/lib/db";
 import { FeedSyncResult, MerchantRecord } from "@/lib/adapters/types";
+import {
+  getAnalyticsSummaryClient,
+  runFeedSyncClient,
+} from "@/lib/client-engine";
 
 interface MerchantStat extends MerchantRecord {
   clicksCount: number;
@@ -56,7 +60,11 @@ export default function AdminDashboardPage() {
       if (res.ok) {
         const json = (await res.json()) as AnalyticsResponse;
         setData(json);
+        return;
       }
+      throw new Error("Fallback to client analytics");
+    } catch {
+      setData(getAnalyticsSummaryClient());
     } finally {
       setLoading(false);
     }
@@ -81,7 +89,15 @@ export default function AdminDashboardPage() {
         setLastSyncBanner(
           `Feed Sync Completed in ${json.syncResult.durationMs}ms: ${json.syncResult.productsSynced} products & ${json.syncResult.offersUpdated} merchant offers refreshed.`
         );
+        return;
       }
+      throw new Error("Fallback to client sync");
+    } catch {
+      const result = runFeedSyncClient();
+      setData(result.summary);
+      setLastSyncBanner(
+        `Feed Sync Completed in ${result.syncResult.durationMs}ms: ${result.syncResult.productsSynced} products & ${result.syncResult.offersUpdated} merchant offers refreshed.`
+      );
     } finally {
       setSyncing(false);
     }
