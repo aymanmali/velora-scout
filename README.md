@@ -102,11 +102,6 @@ flowchart TD
 * **Click-Out Attribution Gateway (`GET /api/redirect/[offerId]`):** Logs each outbound click event, computes estimated CPA commission (`salePriceUsd * commissionRate`), and constructs tracked affiliate URLs (`utm_source=velorascout`, `aff_network`, `click_id`).
 * **Live Analytics Dashboard:** Real-time KPI cards (Outbound Affiliate Clicks, Referred GMV, Estimated Publisher Commission, Average Discount Depth), merchant performance table, live click stream, and an interactive **"Run Feed Sync Pipeline"** trigger.
 
-### 4. Regulatory & Legal Compliance (`/legal/*`)
-* **FTC 16 CFR Part 255 & EU Directive 2005/29/EC** Affiliate Disclosure (`/legal/affiliate-disclosure`).
-* **Meta-Search Intermediary Terms & Price Accuracy Disclaimer** (`/legal/terms`).
-* **GDPR / CCPA Privacy Policy & Affiliate Cookie Consent Manager** (`/legal/privacy`).
-
 ---
 
 ## REST API Reference
