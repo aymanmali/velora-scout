@@ -40,7 +40,6 @@ It combines a **Natural Language Search Intent Parser**, a **Multi-Retailer Pric
 ### Live Deployment Links
 * **Primary Full-Stack Application (Vercel):** [https://velora-scout.vercel.app](https://velora-scout.vercel.app)
 * **Merchant & Affiliate Analytics Console:** [https://velora-scout.vercel.app/admin](https://velora-scout.vercel.app/admin)
-* **FTC Affiliate Disclosure & Legal Suite:** [https://velora-scout.vercel.app/legal/affiliate-disclosure](https://velora-scout.vercel.app/legal/affiliate-disclosure)
 * **GitHub Pages Static Mirror:** [https://aymanmali.github.io/velora-scout/](https://aymanmali.github.io/velora-scout/)
 
 ---
