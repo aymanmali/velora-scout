@@ -152,15 +152,3 @@ velora-scout/
 
 ---
 
-## Local Development
-
-```bash
-# 1. Install dependencies
-npm install
-
-# 2. Start the Next.js development server
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) to test the meta-search interface, or [http://localhost:3000/admin](http://localhost:3000/admin) to inspect the publisher analytics console.
-
